@@ -14,6 +14,7 @@ cf = read_yaml()
 class test_class:
     def test_url(self):
         print("test start", time.strftime("%Y-%m-%d %H:%M:%S"))
+        print("test is running,please wait a moment...")
         file = md()
         file.write("# 测试实验报告 \n")
         file.write("##### tester: " + cf.get('tester') + "\n")
@@ -91,4 +92,5 @@ class test_class:
             file.write("其中成功调用但是参数的次数:" + fail_success_num.__str__() + "次，")
             file.write("报错次数:" + (fail_num - fail_success_num).__str__() + "次。 \n")
         print("test end")
+        print("the test report output in ", cf["out_path"])
         file.close()
