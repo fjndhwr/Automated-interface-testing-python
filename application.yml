@@ -1,0 +1,7 @@
+url: http://192.168.8.90:30097
+out_path: d:/我的/
+tester: hwr
+version: V4.1.0
+head:
+  Accept: application/json, text/plain, */*
+  Cookie: jenkins-timestamper-offset=-28800000; JSESSIONID=3d97136c-df5f-498f-acb8-daccf7fc73f3
