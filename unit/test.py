@@ -62,7 +62,6 @@ class test_class:
                         success_num += 1
                     else:
                         success_num += 1
-                    time.sleep(3)
             else:
                 success_num = 0
                 fail_num = 0
