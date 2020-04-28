@@ -92,4 +92,3 @@ class test_class:
             file.write("报错次数:" + (fail_num - fail_success_num).__str__() + "次。 \n")
         print("test end")
         print("the test report output in ", cf["out_path"])
-        file.close()
