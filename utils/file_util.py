@@ -25,4 +25,5 @@ class md:
 
     def __del__(self):
         if self.fd is not None:
+            print("关闭输出流")
             self.fd.close()
