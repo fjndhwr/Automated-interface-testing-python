@@ -50,14 +50,14 @@ class test_class:
                     data = get(path=item[file_type['path']], params=son_item)
                     back = check_data(data, item[file_type['error_msg']], item[file_type['result']])
 
-                    if back['code'] == 400:
+                    if back.get('code') == 400:
                         file.write("|" + str(son_item) + "|" + back['msg'] + "|\n")
                         fail_num += 1
                         fail_success_num += 1
-                    elif back['code'] == 401:
+                    elif back.get('code') == 401:
                         file.write("|" + str(son_item) + "|" + back['msg'] + "|\n")
                         fail_num += 1
-                    elif back['code'] == 201:
+                    elif back.get('code') == 201:
                         success_error_num += 1
                         success_num += 1
                     else:
@@ -69,14 +69,14 @@ class test_class:
                     data = post(path=item[file_type['path']], params=son_item)
                     back = check_data(data, item[file_type['error_msg']], item[file_type['result']])
 
-                    if back['code'] == 400:
-                        file.write("|" + str(son_item) + "|" + back['msg'] + "|\n")
+                    if back.get('code') == 400:
+                        file.write("|" + str(son_item) + "|" + back.get('msg') + "|\n")
                         fail_num += 1
                         fail_success_num += 1
-                    elif back['code'] == 401:
-                        file.write("|" + str(son_item) + "|" + back['msg'] + "|\n")
+                    elif back.get('code') == 401:
+                        file.write("|" + str(son_item) + "|" + back.get('msg') + "|\n")
                         fail_num += 1
-                    elif back['code'] == 201:
+                    elif back.get('code') == 201:
                         success_error_num += 1
                         success_num += 1
                     else:
@@ -88,7 +88,7 @@ class test_class:
             file.write("其中返回可预料的错误的次数:" + success_error_num.__str__() + "次，")
             file.write("真正成功的次数:" + (success_num - success_error_num).__str__() + "次。 \n")
             file.write("- 失败次数:" + fail_num.__str__() + "次，")
-            file.write("其中成功调用但是参数的次数:" + fail_success_num.__str__() + "次，")
+            file.write("其中成功调用但是返回参数不对的次数:" + fail_success_num.__str__() + "次，")
             file.write("报错次数:" + (fail_num - fail_success_num).__str__() + "次。 \n")
         print("test end")
         print("the test report output in ", cf["out_path"])
