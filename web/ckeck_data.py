@@ -53,6 +53,8 @@ def exist_in_error_msg(error_msg, msg):
 def check_dict(value, result, msg, back):
     for key in result.keys():
         if value.get(key) is None:
+            if key in value:
+                continue
             back["code"] = 400
             msg += key + "字段未返回,"
         elif type(value[key]) is dict and type(value[key]) is type(result[key]):
