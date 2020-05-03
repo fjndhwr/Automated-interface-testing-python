@@ -21,10 +21,10 @@ def check_data(data, error_msg, result):
                     back["code"] = 400
                     msg += key + "字段未返回,"
                 elif type(data[key]) is dict and type(data[key]) is type(result[key]):
-                    check_dict(data[key], result[key], msg, back)
+                    msg += key + ":{" + check_dict(data[key], result[key], msg, back) + "}"
                 elif type(data[key]) is list:
                     if len(data[key]) > 0 and type(data[key][0]) is type(result[key][0]):
-                        check_dict(data[key][0], result[key][0], msg, back)
+                        msg += key + ":{" + check_dict(data[key][0], result[key][0], msg, back) + "}"
                 elif not type(data[key]).__name__ == result[key]:
                     back["code"] = 400
                     msg += key + ":" + "返回类型不匹配,"
@@ -56,10 +56,11 @@ def check_dict(value, result, msg, back):
             back["code"] = 400
             msg += key + "字段未返回,"
         elif type(value[key]) is dict and type(value[key]) is type(result[key]):
-            check_dict(value[key], result[key], msg, back)
+            msg += key + ":{" + check_dict(value[key], result[key], msg, back) + "}"
         elif type(value[key]) is list:
             if len(value[key]) > 0 and type(value[key][0]) is type(result[key][0]):
-                check_dict(value[key][0], result[key][0], msg, back)
+                msg += key + ":{" + check_dict(value[key][0], result[key][0], msg, back) + "}"
         elif not type(value[key]).__name__ == result[key]:
             back["code"] = 400
             msg += key + "返回类型不匹配,"
+    return msg

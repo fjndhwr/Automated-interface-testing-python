@@ -5,4 +5,4 @@ version: V4.1.0
 max_workers: 10
 head:
   Accept: application/json, text/plain, */*
-  Cookie: jenkins-timestamper-offset=-28800000; XXL_JOB_LOGIN_IDENTITY=7b226964223a312c22757365726e616d65223a2261646d696e222c2270617373776f7264223a226531306164633339343962613539616262653536653035376632306638383365222c22726f6c65223a312c227065726d697373696f6e223a6e756c6c7d; lang=zh; screenResolution=1920x1080; JSESSIONID.b2829176=node08reu5iidnafq1cde72jpdz6ai141.node0; kubesphere:sess=kubesphere-huangwr-4SZiHF3fUCJ0tLqETdG0MnpESmXGF9UH; kubesphere:sess.sig=G98dLe31k4kgXopyRGyM9RaW3DI; JSESSIONID=b4b7d820-300d-4671-bcf2-c3fbdff8652f
+  Cookie: jenkins-timestamper-offset=-28800000; JSESSIONID=b14a6843-56e6-4adc-a214-937c9b69fdab
