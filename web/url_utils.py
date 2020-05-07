@@ -12,5 +12,5 @@ def get(path, params):
 
 def post(path, params):
     url = config['url'] + path
-    response = requests.post(url, headers=config['head'], params=params)
+    response = requests.post(url, headers=config['head'], json=params)
     return response.json()
